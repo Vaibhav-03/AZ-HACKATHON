@@ -20,7 +20,7 @@ def remove_elements_with_pattern(array, pattern):
 
 arr = remove_elements_with_pattern(arr, "/solution")
 print(len(arr))
-newarr = list(set(arr))
+arr = list(set(arr))
 
 with open('lc_problems.txt', 'a') as file:
     # Iterate over each link in your final list
