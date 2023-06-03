@@ -38,26 +38,25 @@ def get_a_tags(url):
         except:
             pass
     # Remove duplicate links using set
-    ans = list(set(ans))
     return ans
 
 
 # List to store the final list of links
 my_ans = []
 # Loop through the pages you're interested in (in this case, pages 1-54)
-for i in range(1, 55):
+for i in range(1,55):
     # Call the function to get the 'a' tags from each page and append the results to your list
     my_ans += (get_a_tags(page_URL+str(i)))
 
 # Remove any duplicates that might have been introduced in the process
-my_ans = list(set(my_ans))
 
+my_ans=list(set(my_ans))
 # Open a file to write the results to
-with open('lc.txt', 'a') as f:
+with open('lc.txt', 'a') as file:
     # Iterate over each link in your final list
     for j in my_ans:
         # Write each link to the file, followed by a newline
-        f.write(j+'\n')
+        file.write(j+'\n')
 
 # Print the total number of unique links found
 print(len(my_ans))

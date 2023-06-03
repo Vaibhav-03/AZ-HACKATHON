@@ -11,11 +11,11 @@ from bs4 import BeautifulSoup
 
 # Define the chromedriver service
 s = Service('chromedriver.exe')
-
 # Instantiate the webdriver
 driver = webdriver.Chrome(service=s)
+# check heading_class is present or not first by document.querySelector("");, leetcode page's heading and body class changes day by day
 
-heading_class = ".mr-2.text-xl"
+heading_class = ".mr-2.text-label-1"
 body_class = ".px-5.pt-4"
 index = 1
 QDATA_FOLDER = "Qdata"
@@ -33,13 +33,13 @@ def get_array_of_links():
 
 def add_text_to_index_file(text):
     index_file_path = os.path.join(QDATA_FOLDER, "index.txt")
-    with open(index_file_path, "a") as index_file:
+    with open(index_file_path, "a",encoding="utf-8",errors="ignore") as index_file:
         index_file.write(text + "\n")
 
 
 def add_link_to_Qindex_file(text):
     index_file_path = os.path.join(QDATA_FOLDER, "Qindex.txt")
-    with open(index_file_path, "a") as Qindex_file:
+    with open(index_file_path, "a", encoding="utf-8", errors="ignore") as Qindex_file:
         Qindex_file.write(text)
 
 
@@ -47,7 +47,7 @@ def create_and_add_text_to_file(file_name, text):
     folder_path = os.path.join(QDATA_FOLDER, file_name)
     os.makedirs(folder_path, exist_ok=True)
     file_path = os.path.join(folder_path, file_name + ".txt")
-    with open(file_path, "w") as new_file:
+    with open(file_path, "w", encoding="utf-8", errors="ignore") as new_file:
         new_file.write(text)
 
 

@@ -18,12 +18,12 @@ def remove_elements_with_pattern(array, pattern):
     return new_array
 
 
-arr = remove_elements_with_pattern(arr, "/solution")
-print(len(arr))
-arr = list(set(arr))
+newarr = remove_elements_with_pattern(arr, "/solution")
+print(len(newarr))
+# arr = list(set(arr))
 
-with open('lc_problems.txt', 'a') as f:
+with open('lc_problems.txt', 'a') as file:
     # Iterate over each link in your final list
-    for j in arr:
+    for j in newarr:
         # Write each link to the file, followed by a newline
-        f.write(j)
+        file.write(j+'\n')
